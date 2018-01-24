@@ -45,17 +45,17 @@ export class PaymentdetailsComponent implements OnInit {
     var result = true;
     
     if (this.phone.length == 0 || this.phone.length != 10){
-      this.inputErrors.push('Invalid Phone number!');
+      this.inputErrors.push('Неверный номер телефона!');
       result = false;
     }
 
     if (! this.amount || this.amount < 1){
-      this.inputErrors.push('Invalid Phone number!');
+      this.inputErrors.push('Сумма должна быть положительной!');
       result = false;
     }
 
     if (this.amount > 1000){
-      this.inputErrors.push('Amount should be less than 1000!');
+      this.inputErrors.push('Сумма пополнения не должны превышать 1000 рублей!');
       result = false;
     }
 
@@ -65,7 +65,7 @@ export class PaymentdetailsComponent implements OnInit {
   prepareInfo(data){
     if (data.status == 200){
       this.refillResult.img = "assets/img/success.png";
-      this.refillResult.msg = "Phone # " + this.phone + " successfully refilled! You'll receive sms soon" ;
+      this.refillResult.msg = "Запрос на пополнение телефона " + this.phone + " успешно отправлен! Вы вскоре получите sms о пополнении" ;
     } else {
       this.refillResult.img = "assets/img/failure.png";
       this.refillResult.msg = data.errorMessage;

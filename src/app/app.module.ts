@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { NgxPhoneMaskModule } from 'ngx-phone-mask';
+import { NgxPhoneMaskModule } from 'ngx-phone-mask-rus';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';

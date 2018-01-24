@@ -1,12 +1,49 @@
-<img [src]="operator.logo" alt="">
-<app-phoneinput [(phone)]="phone" (onChange)="onPhoneChange($event)"></app-phoneinput>
-<app-amountinput [(amount)]="amount" (onChange)="onAmountChange($event)"></app-amountinput>
-<button  class="btn btn-primary" (click)="refill($event)">Refill</button>
+<div class="row center">
+	<div class="col-0 col-md-3">
+	</div>
+	<div class="col-12 col-md-6">
 
-<div class="alert alert-danger" *ngIf="inputErrors.length>0">
-	<p *ngFor="let alert of inputErrors">{{alert}}</p>
+		<img [src]="operator.logo" alt="">
+	</div>
+	<div class="col-0 col-md-3">
+	</div>
+
+	<div class="col-0 col-md-3">
+	</div>
+	<div class="col-12 col-md-6">
+
+		<app-phoneinput [(phone)]="phone" (onChange)="onPhoneChange($event)"></app-phoneinput>
+	</div>
+	<div class="col-0 col-md-3">
+	</div>
+
+	<div class="col-0 col-md-3">
+	</div>
+	<div class="col-12 col-md-6">
+
+		<app-amountinput [(amount)]="amount" (onChange)="onAmountChange($event)"></app-amountinput>
+	</div>
+	<div class="col-0 col-md-3">
+	</div>
+
+	<div class="col-0 col-md-3">
+	</div>
+	<div class="col-12 col-md-6">
+		<button  class="btn btn-primary" (click)="refill($event)">Refill</button>
+	</div>
+	<div class="col-0 col-md-3">
+	</div>
+
+	<div class=" col-12 alert alert-danger" *ngIf="inputErrors.length>0">
+		<p *ngFor="let alert of inputErrors">{{alert}}</p>
+	</div>
+
 </div>
+<div class="cover-modal"  *ngIf="showResult">
+    <div id="modal-refill-result">
+		<app-infowindow class="row center" (onclose)="onCloseInfo()" [message]="refillResult"></app-infowindow>
 
-<app-infowindow *ngIf="showResult" (onclose)="onCloseInfo()" [message]="refillResult"></app-infowindow>
+    </div>
+</div>
 
 <!-- <app-infowindow *ngIf="showResult"></app-infowindow> -->
