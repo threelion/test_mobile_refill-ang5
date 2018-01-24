@@ -1,0 +1,8 @@
+<div class="row center">
+	<div class="col-12">
+		<h3>Выберите мобильного оператора</h3>
+	</div>
+</div>
+<div class="row center">
+		<app-simpleoperator *ngFor="let operator of operators" [operator]="operator"  class="col-lg-4 col-sm-6 col-12"></app-simpleoperator>
+</div>

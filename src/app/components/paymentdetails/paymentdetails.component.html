@@ -1,0 +1,12 @@
+<img [src]="operator.logo" alt="">
+<app-phoneinput [(phone)]="phone" (onChange)="onPhoneChange($event)"></app-phoneinput>
+<app-amountinput [(amount)]="amount" (onChange)="onAmountChange($event)"></app-amountinput>
+<button  class="btn btn-primary" (click)="refill($event)">Refill</button>
+
+<div class="alert alert-danger" *ngIf="inputErrors.length>0">
+	<p *ngFor="let alert of inputErrors">{{alert}}</p>
+</div>
+
+<app-infowindow *ngIf="showResult" (onclose)="onCloseInfo()" [message]="refillResult"></app-infowindow>
+
+<!-- <app-infowindow *ngIf="showResult"></app-infowindow> -->
